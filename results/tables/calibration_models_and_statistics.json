@@ -1,0 +1,167 @@
+{
+  "output_space": "strict27",
+  "target_actions": [
+    "A06",
+    "A09",
+    "A10",
+    "A12",
+    "A15",
+    "A16",
+    "A26"
+  ],
+  "clean_global_temperatures_by_mask": {
+    "lidar_mmwave": 1.2569101511096457,
+    "lidar_only": 1.2383268149551383,
+    "mmwave_only": 1.441973562658719
+  },
+  "pooled_global_temperature": 2.624011176879339,
+  "quality_aware_model": {
+    "feature_names": [
+      "log1p_lidar_point_count",
+      "log1p_mmwave_point_count",
+      "lidar_azimuth_occupancy",
+      "mmwave_azimuth_occupancy",
+      "lidar_range_occupancy",
+      "mmwave_range_occupancy",
+      "lidar_predictive_entropy",
+      "mmwave_predictive_entropy",
+      "unimodal_js_disagreement",
+      "lidar_missing",
+      "mmwave_missing"
+    ],
+    "feature_mean": [
+      5.401167967378875,
+      2.4413326376256856,
+      0.23781037769455105,
+      0.14026264512278255,
+      0.21580108359133127,
+      0.2540108359133127,
+      0.36114197481203353,
+      0.27549009513018685,
+      0.762161261413746,
+      0.12693498452012383,
+      0.12693498452012383
+    ],
+    "feature_scale": [
+      2.197402147670043,
+      1.211572972970774,
+      0.12085045419214378,
+      0.08060539112682856,
+      0.08409528484878437,
+      0.16796701644454923,
+      0.30296171366093366,
+      0.32635003434069454,
+      0.28408245887362593,
+      0.33290012650193274,
+      0.33290012650193634
+    ],
+    "weights": [
+      -1.1298620990291095,
+      -2.0535810006986988,
+      -0.5941137658534809,
+      -0.2040423855498052,
+      -0.10235255555196113,
+      0.5801487077028438,
+      0.5983417602711838,
+      0.467767867178466,
+      0.1273461225478999,
+      -1.9133629037602,
+      -1.3164478685532661
+    ],
+    "bias": 2.5267869954116957,
+    "minimum_temperature": 0.05,
+    "regularization": 0.001
+  },
+  "calibration_sample_count": 323000,
+  "calibration_subject_count": 17,
+  "calibration_cap_per_condition": 1000,
+  "confirmatory_scope": {
+    "mask_name": "lidar_mmwave",
+    "geometries": [
+      "uniform",
+      "azimuth_sector"
+    ],
+    "clean_excluded": true,
+    "condition_count": 240,
+    "condition_ids_sha256": "0a453f91a1a57271756623e3b21bfa2f76493614ea8e51655fdb5f8c515c1601",
+    "recording_cluster_test_observation_count": 1680720
+  },
+  "paired_cluster_bootstrap": {
+    "cluster_count": 26,
+    "repetitions": 2000,
+    "qa_minus_pooled_nll": -0.12279167707850026,
+    "ci95_low": -0.1479705503936475,
+    "ci95_high": -0.09627653854500837,
+    "bootstrap_tail_probability": 0.0,
+    "sign_flip_repetitions": 20000,
+    "sign_flip_seed": 20260803,
+    "sign_flip_p": 4.999750012499375e-05
+  },
+  "geometry_stratified_bootstrap_holm": [
+    {
+      "cluster_count": 26,
+      "repetitions": 2000,
+      "qa_minus_pooled_nll": -0.1216132347100217,
+      "ci95_low": -0.1470905509921048,
+      "ci95_high": -0.0920594395230053,
+      "bootstrap_tail_probability": 0.0,
+      "sign_flip_repetitions": 20000,
+      "sign_flip_seed": 20260804,
+      "sign_flip_p": 4.999750012499375e-05,
+      "geometry": "uniform",
+      "holm_adjusted_p": 9.99950002499875e-05
+    },
+    {
+      "cluster_count": 26,
+      "repetitions": 2000,
+      "qa_minus_pooled_nll": -0.12397011944697882,
+      "ci95_low": -0.15267485107381334,
+      "ci95_high": -0.09556037439151008,
+      "bootstrap_tail_probability": 0.0,
+      "sign_flip_repetitions": 20000,
+      "sign_flip_seed": 20260805,
+      "sign_flip_p": 4.999750012499375e-05,
+      "geometry": "azimuth_sector",
+      "holm_adjusted_p": 9.99950002499875e-05
+    }
+  ],
+  "paired_subject_cluster_sensitivity": {
+    "cluster_count": 16,
+    "repetitions": 2000,
+    "qa_minus_pooled_nll": -0.12279167707849986,
+    "ci95_low": -0.15383297259621678,
+    "ci95_high": -0.09402358835191775,
+    "bootstrap_tail_probability": 0.0,
+    "sign_flip_repetitions": 20000,
+    "sign_flip_seed": 20260806,
+    "sign_flip_p": 0.000199990000499975
+  },
+  "geometry_stratified_subject_cluster_sensitivity_holm": [
+    {
+      "cluster_count": 16,
+      "repetitions": 2000,
+      "qa_minus_pooled_nll": -0.12161323471002171,
+      "ci95_low": -0.1518560775147558,
+      "ci95_high": -0.08283439497090915,
+      "bootstrap_tail_probability": 0.0,
+      "sign_flip_repetitions": 20000,
+      "sign_flip_seed": 20260807,
+      "sign_flip_p": 0.000199990000499975,
+      "geometry": "uniform",
+      "holm_adjusted_p": 0.000199990000499975
+    },
+    {
+      "cluster_count": 16,
+      "repetitions": 2000,
+      "qa_minus_pooled_nll": -0.12397011944697828,
+      "ci95_low": -0.16116539999234297,
+      "ci95_high": -0.09428634520176582,
+      "bootstrap_tail_probability": 0.0,
+      "sign_flip_repetitions": 20000,
+      "sign_flip_seed": 20260808,
+      "sign_flip_p": 4.999750012499375e-05,
+      "geometry": "azimuth_sector",
+      "holm_adjusted_p": 9.99950002499875e-05
+    }
+  ]
+}

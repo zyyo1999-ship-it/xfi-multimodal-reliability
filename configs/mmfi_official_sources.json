@@ -1,0 +1,39 @@
+{
+  "dataset": "MM-Fi",
+  "license": "CC BY-NC 4.0",
+  "official_project_page": "https://ntu-aiot-lab.github.io/mm-fi",
+  "official_toolbox": "https://github.com/ybhbingo/MMFi_dataset",
+  "official_google_drive_folder": {
+    "url": "https://drive.google.com/drive/folders/1zDbhfH3BV-xCZVUHmK65EgVV1HMDEYcz?usp=sharing",
+    "folder_id": "1zDbhfH3BV-xCZVUHmK65EgVV1HMDEYcz",
+    "files": {
+      "E01": {
+        "filename": "E01.zip",
+        "file_id": "1ExV3AQeHstQ3Z1VBFOC0z1BDtTD5nZ1B"
+      },
+      "E02": {
+        "filename": "E02.zip",
+        "file_id": "1oIPGmsjDlzQsnTDVzIhYRQq-3BHTxQ8o"
+      },
+      "E03": {
+        "filename": "E03.zip",
+        "file_id": "1WjfPToIpi1a0cRYBvIr2yZoq_2jQpPQq"
+      },
+      "E04": {
+        "filename": "E04.zip",
+        "file_id": "1-XTwxO0ymJ1AtI5HsOOjD-XTrIHKPaA1"
+      }
+    }
+  },
+  "official_baidu_share": {
+    "url": "https://pan.baidu.com/s/1IU9okQzdeCIaF7xCr1X_pw",
+    "extraction_code": "t316"
+  },
+  "verification_notes": [
+    "The source links are published by the official MM-Fi toolbox repository.",
+    "Google Drive file IDs were enumerated from the official public folder on 2026-08-03.",
+    "All four Google Drive archives were quota-limited when checked on 2026-08-03.",
+    "Archive SHA-256 values are provenance records only unless the dataset authors publish reference hashes.",
+    "Scientific use requires successful ZIP CRC reading plus the repository's structural and frame-alignment audit."
+  ]
+}

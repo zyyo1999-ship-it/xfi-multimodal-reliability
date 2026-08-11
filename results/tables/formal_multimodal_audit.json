@@ -1,0 +1,105 @@
+{
+  "status": "PASS",
+  "experiment": "formal_multimodal_lower_limb_calibration",
+  "condition_count": 323,
+  "sample_count": 15315,
+  "calibration_subject_count": 17,
+  "test_subject_count": 16,
+  "checks": [
+    "full_27_class_clean_baseline_gate_passed",
+    "clean_baseline_three_masks_complete",
+    "clean_baseline_artifact_sha256_matches_manifest",
+    "all_323_conditions_present",
+    "artifact_sha256_matches_manifest",
+    "finite_27_class_logits",
+    "cross_condition_sample_alignment",
+    "exact_corruption_point_counts",
+    "subject_disjoint_posthoc_partition",
+    "strict27_and_conditioned7_complete",
+    "analysis_table_dimensions",
+    "temperature_scaling_preserves_predictions",
+    "paired_cluster_bootstrap_2000_repetitions",
+    "paired_cluster_sign_flip_20000_repetitions",
+    "subject_cluster_sensitivity_analysis",
+    "holm_adjusted_p_values_valid",
+    "quality_feature_schema_complete",
+    "decision_oriented_derived_tables_and_figures"
+  ],
+  "clean_baseline_gate_included": true,
+  "clean_baseline_gate": {
+    "status": "PASS",
+    "scope": "full_27_class_clean_validation",
+    "sample_count": 54433,
+    "action_count": 27,
+    "class_count": 27,
+    "reference": {
+      "paper": "X-Fi: A Modality-Invariant Foundation Model for Multimodal Human Sensing",
+      "venue": "ICLR 2025",
+      "location": "Table 2, MM-Fi HAR, S1 Random Split",
+      "url": "https://arxiv.org/abs/2410.10167",
+      "note": "The paper reports averages from multiple experiments; the released checkpoint is one realization."
+    },
+    "rows": [
+      {
+        "mask_name": "lidar_mmwave",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.8891297558466371,
+        "macro_f1": 0.8895698976833757,
+        "official_accuracy_reference": 0.887,
+        "accuracy_delta": 0.0021297558466371047,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      },
+      {
+        "mask_name": "lidar_only",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.5317913765546636,
+        "macro_f1": 0.5250901493456005,
+        "official_accuracy_reference": 0.527,
+        "accuracy_delta": 0.004791376554663551,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      },
+      {
+        "mask_name": "mmwave_only",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.8597174508110889,
+        "macro_f1": 0.8608020461654469,
+        "official_accuracy_reference": 0.857,
+        "accuracy_delta": 0.002717450811088873,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      }
+    ]
+  },
+  "analysis": {
+    "strict27": {
+      "metric_rows": 1615,
+      "per_action_rows": 2261,
+      "robustness_auc_rows": 150,
+      "bootstrap_rows": 2,
+      "subject_sensitivity_rows": 2,
+      "calibration_sample_count": 323000,
+      "confirmatory_condition_count": 240,
+      "formal_frame_count": 15315,
+      "derived_fusion_comparisons": 240,
+      "derived_keep_drop_comparisons": 80
+    },
+    "conditioned7": {
+      "metric_rows": 1615,
+      "per_action_rows": 2261,
+      "robustness_auc_rows": 150,
+      "bootstrap_rows": 2,
+      "subject_sensitivity_rows": 2,
+      "calibration_sample_count": 323000,
+      "confirmatory_condition_count": 240,
+      "formal_frame_count": 15315,
+      "derived_fusion_comparisons": 240,
+      "derived_keep_drop_comparisons": 80
+    }
+  },
+  "checkpoint_sha256": "5c2cb5b61d59591e5222bee4abf617032b08d9f18272f4fa27077f6606dad728"
+}

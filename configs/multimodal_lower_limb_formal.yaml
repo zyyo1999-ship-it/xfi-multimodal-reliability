@@ -1,0 +1,95 @@
+study:
+  protocol_version: Track-B-v1.2
+  title_en: Confidence Calibration for Multimodal Indoor Lower-Limb Rehabilitation Activity Recognition under Sensing-Quality Degradation
+  title_cn: 感知质量退化条件下室内下肢康复动作多模态识别的置信度校准研究
+  track: B_formal_multimodal
+  status: protocol_frozen_results_pending
+
+data:
+  dataset: MM-Fi
+  model: X-Fi MMFi-HAR
+  model_output_classes: 27
+  target_actions: [A06, A09, A10, A12, A15, A16, A26]
+  sample_key: [scene, subject, action, frame_index]
+  source_split: official_random_split_seed_0_ratio_0.8_validation_only
+  posthoc_partition: frozen_subject_disjoint_calibration_test
+
+modalities:
+  primary: [lidar, mmwave]
+  masks:
+    lidar_mmwave: [false, false, true, true]
+    lidar_only: [false, false, false, true]
+    mmwave_only: [false, false, true, false]
+
+corruptions:
+  geometries: [uniform, azimuth_sector]
+  point_loss_rates: [0.0, 0.25, 0.5, 0.75, 0.9]
+  seeds: [7, 21, 42, 84, 168]
+  nested_within_sample_seed: true
+  structured_corruption_is_controlled_proxy: true
+
+calibration:
+  fitting_scope: pooled_across_fusion_and_missing_modality_controls
+  methods:
+    - uncalibrated
+    - clean_global_temperature_scaling
+    - pooled_global_temperature_scaling
+    - severity_specific_oracle_temperature_scaling
+    - observable_quality_aware_scalar_temperature_scaling
+  quality_features:
+    - log1p_lidar_point_count
+    - log1p_mmwave_point_count
+    - lidar_azimuth_occupancy
+    - mmwave_azimuth_occupancy
+    - lidar_range_occupancy
+    - mmwave_range_occupancy
+    - lidar_predictive_entropy
+    - mmwave_predictive_entropy
+    - unimodal_js_disagreement
+    - lidar_missing
+    - mmwave_missing
+  regularization_selection: subject_grouped_cross_validation_on_calibration_only
+
+evaluation:
+  primary_output_space: strict_27_class
+  secondary_output_space: conditioned_7_class
+  primary_analysis_mask: lidar_mmwave
+  preregistered_control_masks: [lidar_only, mmwave_only]
+  metrics: [accuracy, macro_f1, nll, brier, ece, adaptive_ece, mce, confidence_gap, aurc]
+  bootstrap_clusters: subject_action_recording
+  sensitivity_analysis_cluster: subject
+  bootstrap_repetitions: 2000
+  sign_flip_repetitions: 20000
+  geometry_hypothesis_count: 2
+  geometry_multiplicity_correction: holm
+  confidence_interval: 0.95
+
+clean_baseline_gate:
+  scope: all_27_actions
+  expected_frame_count: 54433
+  reference: X-Fi_ICLR_2025_Table_2_MMFi_HAR_S1_random_split
+  official_accuracy:
+    lidar_only: 0.527
+    mmwave_only: 0.857
+    lidar_mmwave: 0.887
+  absolute_tolerance: 0.03
+  tolerance_reason: released_checkpoint_is_one_realization_while_paper_reports_multi_run_average
+
+execution:
+  gpu: NVIDIA_GeForce_RTX_4090_24GB
+  batch_size: 32
+  point_cache_gib: 20
+  batch_benchmark:
+    real_aligned_frames: 512
+    batch_8_fps: 77.99
+    batch_16_fps: 106.99
+    batch_32_fps: 153.83
+    batch_64_fps: 148.53
+    batch_32_peak_vram_gib: 8.963
+  note: execution settings affect throughput but do not change the frozen scientific matrix
+
+claim_boundaries:
+  healthy_volunteers_only: true
+  clinical_validation: false
+  diagnostic_or_treatment_claim: false
+  controlled_degradation_not_physical_sensor_failure: true
