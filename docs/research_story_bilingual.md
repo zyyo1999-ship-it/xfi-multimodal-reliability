@@ -11,9 +11,10 @@ robustness** and **confidence reliability** as two separate questions.
 集成与 ROS2 导航经历促使本项目把**识别鲁棒性**和**置信度可靠性**作为两个不同问题
 进行评估。
 
-## From literature to question / 从文献到问题
+## Project positioning / 项目文献定位
 
-The project connects four lines of work:
+The project bibliography connects four lines of work. This positioning does not
+imply that every cited paper was personally read in full:
 
 1. MM-Fi provides synchronized multimodal human-sensing recordings.
 2. X-Fi provides a released modality-invariant recognizer and modality masks.
@@ -23,6 +24,12 @@ The project connects four lines of work:
 
 因此，核心问题是：当 LiDAR 与毫米波点观测质量下降时，一个冻结的 X-Fi 识别器如何
 失效，以及由可观测输入质量驱动的标量温度能否比单一混合温度更好地校准其置信度？
+
+The study was developed with extensive AI assistance. The owner is currently
+auditing the implementation and reading the MM-Fi, X-Fi, and calibration source
+papers; the bibliography should be treated as research positioning rather than
+a personal reading log. / 本研究在 AI 深度辅助下形成；项目所有者正在审计实现并补读
+MM-Fi、X-Fi 与校准原论文，参考文献表不应被理解为本人阅读记录。
 
 ## Study design / 实验设计
 
@@ -84,4 +91,3 @@ AI coding assistants supported code drafting, debugging, documentation, and
 review. The repository retains executable tests, frozen protocols, hashes,
 audited outputs, and explicit claim boundaries so that results can be inspected
 rather than accepted from prose alone.
-
