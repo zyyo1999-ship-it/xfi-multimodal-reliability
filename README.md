@@ -22,6 +22,10 @@ The recognition model remains frozen. The experiment changes only the input
 quality and the post-hoc confidence calibration method, which separates
 **recognition robustness** from **confidence reliability**.
 
+For the motivation, literature-to-question path, contribution, and claim
+boundaries, see the bilingual
+[`Research Story`](docs/research_story_bilingual.md).
+
 ## Pipeline
 
 ```mermaid
@@ -162,4 +166,3 @@ retained so the work can be inspected rather than accepted from prose alone.
 Original code in this repository is released under the MIT License. MM-Fi,
 X-Fi, checkpoints, and other third-party assets are not covered by this license;
 their original licenses and terms continue to apply.
-
