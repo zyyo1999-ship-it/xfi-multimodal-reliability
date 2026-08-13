@@ -9,6 +9,8 @@ authors:
 version: 1.0.0
 date-released: 2026-08-13
 license: MIT
+repository-code: "https://github.com/zyyo1999-ship-it/xfi-multimodal-reliability"
+url: "https://github.com/zyyo1999-ship-it/xfi-multimodal-reliability"
 keywords:
   - multimodal sensing
   - confidence calibration
