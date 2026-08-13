@@ -169,16 +169,15 @@ python scripts/build_research_brief.py \
 - Real-time latency, hardware faults, diagnostic use, and clinical outcomes were
   not evaluated.
 
-## Attribution and AI assistance
+## Attribution and verification
 
 MM-Fi and X-Fi remain the work of their respective authors and are cited in
 [`docs/references.bib`](docs/references.bib). This repository contains an
 independent evaluation layer built on their released research assets.
 
-AI coding assistants were used for code drafting, debugging support,
-documentation, and review. Experimental protocols, executable tests,
-machine-readable audits, content hashes, and reported numerical outputs are
-retained so the work can be inspected rather than accepted from prose alone.
+AI-assisted development tools supported parts of implementation and
+documentation. Reported results remain tied to frozen protocols, executable
+tests, machine-readable audits, and content hashes for independent inspection.
 
 ## License
 

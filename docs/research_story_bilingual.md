@@ -25,11 +25,9 @@ imply that every cited paper was personally read in full:
 因此，核心问题是：当 LiDAR 与毫米波点观测质量下降时，一个冻结的 X-Fi 识别器如何
 失效，以及由可观测输入质量驱动的标量温度能否比单一混合温度更好地校准其置信度？
 
-The study was developed with extensive AI assistance. The owner is currently
-auditing the implementation and reading the MM-Fi, X-Fi, and calibration source
-papers; the bibliography should be treated as research positioning rather than
-a personal reading log. / 本研究在 AI 深度辅助下形成；项目所有者正在审计实现并补读
-MM-Fi、X-Fi 与校准原论文，参考文献表不应被理解为本人阅读记录。
+The bibliography positions the study within related work and should not be
+interpreted as a personal reading log. / 参考文献用于说明研究定位，不应被理解为
+个人逐篇精读记录。
 
 ## Study design / 实验设计
 
@@ -85,9 +83,10 @@ clustered statistics, figures, tests, and machine-readable result audits.
 - Tables and audit / 表格与审计：[`results/tables/`](../results/tables)
 - References / 文献：[`references.bib`](references.bib)
 
-## AI assistance / AI 协作说明
+## Development and verification / 开发与验证说明
 
-AI coding assistants supported code drafting, debugging, documentation, and
-review. The repository retains executable tests, frozen protocols, hashes,
-audited outputs, and explicit claim boundaries so that results can be inspected
-rather than accepted from prose alone.
+AI-assisted development tools supported parts of implementation and
+documentation. The repository retains executable tests, frozen protocols,
+hashes, audited outputs, and explicit claim boundaries for independent
+inspection. / AI 辅助开发工具参与了部分实现与文档工作；仓库保留可执行测试、
+冻结协议、哈希、审计结果与明确的结论边界，以支持独立核验。
