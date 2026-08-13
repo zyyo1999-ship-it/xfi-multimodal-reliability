@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this independent evaluation code, please cite this repository and the original MM-Fi and X-Fi papers."
+title: "X-Fi Multimodal Reliability Evaluation"
+type: software
+authors:
+  - family-names: Zhang
+    given-names: Yiyang
+    email: YIYANG021@e.ntu.edu.sg
+version: 1.0.0
+date-released: 2026-08-13
+license: MIT
+keywords:
+  - multimodal sensing
+  - confidence calibration
+  - human activity recognition
+  - sensing degradation
+  - LiDAR
+  - mmWave

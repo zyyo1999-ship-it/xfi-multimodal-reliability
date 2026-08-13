@@ -12,6 +12,15 @@ controlled sensing-quality degradation.
 > not a peer-reviewed publication, does not provide clinical validation, and is
 > not an official repository of the X-Fi or MM-Fi authors.
 
+**Advisor-facing summary:**
+[`One-page Research Brief (PDF)`](docs/Yiyang_Zhang_XFi_MMFi_Research_Brief.pdf)
+| [`Accessible text source`](docs/research_brief_source.md)
+
+> **Main takeaway:** observable quality cues improved confidence reliability
+> under controlled LiDAR-mmWave degradation, but did not recover recognition
+> Accuracy. This motivates quality-gated fusion or selective abstention rather
+> than calibration alone.
+
 ## Research question
 
 Can a deployable quality-aware scalar temperature calibrate frozen
@@ -111,6 +120,7 @@ configs/             Frozen protocol and official-source metadata
 docs/                Bilingual pre-analysis plan and code walkthrough
 results/figures/     Selected publication-style figures
 results/tables/      Selected aggregate results and machine audit
+scripts/             Research-brief builder and public-release verifier
 src/                 Data, corruption, inference, calibration, and audit code
 tests/               Unit tests for protocol-critical components
 ```
@@ -131,11 +141,20 @@ python -m pip install --upgrade pip
 # Install the PyTorch build matching your CUDA version first.
 python -m pip install -r requirements.txt
 python -m unittest discover -s tests -v
+python scripts/verify_public_release.py
 ```
 
 The unit tests validate protocol logic without downloading the full dataset.
 Full GPU reproduction requires the official data, X-Fi source, and checkpoint.
 See [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md) for the staged workflow.
+
+To rebuild the one-page brief from the audited aggregate results:
+
+```bash
+python -m pip install -r requirements-docs.txt
+python scripts/build_research_brief.py \
+  --preview docs/assets/research_brief_preview.png
+```
 
 ## Interpretation boundaries
 

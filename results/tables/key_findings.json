@@ -1,0 +1,717 @@
+{
+  "summary_schema_version": 1,
+  "experiment": "formal_multimodal_lower_limb_calibration",
+  "evidence_status": "formal_real_data_evidence",
+  "claim_permitted": true,
+  "audit_status": "PASS",
+  "sample_count": 15315,
+  "condition_count": 323,
+  "target_recording_count": 56,
+  "target_subject_count": 33,
+  "target_action_count": 7,
+  "calibration_subject_count": 17,
+  "test_subject_count": 16,
+  "checkpoint_sha256": "5c2cb5b61d59591e5222bee4abf617032b08d9f18272f4fa27077f6606dad728",
+  "data_audit_sha256": "f6c724f0058cae8d12aa48b6df9b634ee9feffb7086f1d1c1978546c09b83301",
+  "aligned_pair_content_sha256": "c5f87aaea37981bc70f8e055795a13b9f8501709cf5daf6409c70661e91fbb76",
+  "archive_provenance_bundle_sha256": "6f3c3b1b5973936e3f754a893ba84cc3ef5a9f0137351dfcb060e4fe30160d19",
+  "clean_baseline_gate": {
+    "status": "PASS",
+    "scope": "full_27_class_clean_validation",
+    "sample_count": 54433,
+    "action_count": 27,
+    "class_count": 27,
+    "reference": {
+      "paper": "X-Fi: A Modality-Invariant Foundation Model for Multimodal Human Sensing",
+      "venue": "ICLR 2025",
+      "location": "Table 2, MM-Fi HAR, S1 Random Split",
+      "url": "https://arxiv.org/abs/2410.10167",
+      "note": "The paper reports averages from multiple experiments; the released checkpoint is one realization."
+    },
+    "rows": [
+      {
+        "mask_name": "lidar_mmwave",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.8891297558466371,
+        "macro_f1": 0.8895698976833757,
+        "official_accuracy_reference": 0.887,
+        "accuracy_delta": 0.0021297558466371047,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      },
+      {
+        "mask_name": "lidar_only",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.5317913765546636,
+        "macro_f1": 0.5250901493456005,
+        "official_accuracy_reference": 0.527,
+        "accuracy_delta": 0.004791376554663551,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      },
+      {
+        "mask_name": "mmwave_only",
+        "sample_count": 54433,
+        "action_count": 27,
+        "accuracy": 0.8597174508110889,
+        "macro_f1": 0.8608020461654469,
+        "official_accuracy_reference": 0.857,
+        "accuracy_delta": 0.002717450811088873,
+        "absolute_tolerance": 0.03,
+        "within_tolerance": true
+      }
+    ]
+  },
+  "output_spaces": {
+    "strict27": {
+      "output_space": "strict27",
+      "metric_row_count": 1615,
+      "clean_uncalibrated_by_mask": {
+        "lidar_mmwave": {
+          "accuracy": 0.9000428387833785,
+          "macro_f1": 0.9279449593608134,
+          "nll": 0.34045415270777935,
+          "brier": 0.15098854113514226,
+          "ece": 0.043260351543032476,
+          "adaptive_ece": 0.04303971884003913,
+          "aurc": 0.012769342751759599
+        },
+        "lidar_only": {
+          "accuracy": 0.6218763387119806,
+          "macro_f1": 0.7005091843673046,
+          "nll": 1.314630420555179,
+          "brier": 0.4987634856294889,
+          "ece": 0.09949302048321458,
+          "adaptive_ece": 0.09977279805121624,
+          "aurc": 0.13742619217591148
+        },
+        "mmwave_only": {
+          "accuracy": 0.8316435813222904,
+          "macro_f1": 0.8735755102947381,
+          "nll": 0.6339626374284045,
+          "brier": 0.2477803794080289,
+          "ece": 0.08332391193070089,
+          "adaptive_ece": 0.08335001127533759,
+          "aurc": 0.030125945587167108
+        }
+      },
+      "degraded_fusion_condition_count": 240,
+      "degraded_fusion_mean_by_method": {
+        "uncalibrated": {
+          "accuracy": 0.4821195678042744,
+          "macro_f1": 0.542861518687878,
+          "nll": 2.854984819341907,
+          "brier": 0.7604360875107166,
+          "ece": 0.28173051590848025,
+          "adaptive_ece": 0.28173263835888546,
+          "aurc": 0.3583113088871227
+        },
+        "clean_global_ts": {
+          "accuracy": 0.4821195678042744,
+          "macro_f1": 0.542861518687878,
+          "nll": 2.439567424078386,
+          "brier": 0.7147822052039536,
+          "ece": 0.22200739418719415,
+          "adaptive_ece": 0.2223260452483387,
+          "aurc": 0.35716193065651586
+        },
+        "pooled_global_ts": {
+          "accuracy": 0.4821195678042744,
+          "macro_f1": 0.542861518687878,
+          "nll": 1.9683025665468101,
+          "brier": 0.6486023878789574,
+          "ece": 0.14277000766918677,
+          "adaptive_ece": 0.1429447475256672,
+          "aurc": 0.35522715194939075
+        },
+        "severity_oracle_ts": {
+          "accuracy": 0.4821195678042744,
+          "macro_f1": 0.542861518687878,
+          "nll": 1.8260543834141465,
+          "brier": 0.6166774909511381,
+          "ece": 0.040834689725560716,
+          "adaptive_ece": 0.042722813256584516,
+          "aurc": 0.3550210361314106
+        },
+        "quality_aware_ts": {
+          "accuracy": 0.4821195678042744,
+          "macro_f1": 0.542861518687878,
+          "nll": 1.8455108894683099,
+          "brier": 0.6193522077369366,
+          "ece": 0.06300709453653311,
+          "adaptive_ece": 0.06309582777553971,
+          "aurc": 0.34954568010586323
+        }
+      },
+      "worst_uncalibrated_fusion_condition": {
+        "condition_id": "lidar_mmwave__azimuth_sector__seed_21__lidar_0.75__mmwave_0.90",
+        "geometry": "azimuth_sector",
+        "corruption_seed": 21,
+        "lidar_drop_rate": 0.75,
+        "mmwave_drop_rate": 0.9,
+        "methods": {
+          "uncalibrated": {
+            "accuracy": 0.03212908753391404,
+            "macro_f1": 0.056213690632638647,
+            "nll": 7.207606110709217,
+            "brier": 1.4085788990521975,
+            "ece": 0.574954320717219,
+            "adaptive_ece": 0.574954320717219,
+            "aurc": 0.9535967572464451
+          },
+          "clean_global_ts": {
+            "accuracy": 0.03212908753391404,
+            "macro_f1": 0.056213690632638647,
+            "nll": 6.0233943671362296,
+            "brier": 1.3079206609515985,
+            "ece": 0.48877772605146513,
+            "adaptive_ece": 0.4887777260514651,
+            "aurc": 0.9527461918462963
+          },
+          "pooled_global_ts": {
+            "accuracy": 0.03212908753391404,
+            "macro_f1": 0.056213690632638647,
+            "nll": 4.0400856171425215,
+            "brier": 1.0488890374074655,
+            "ece": 0.21275188280384677,
+            "adaptive_ece": 0.2127518828038468,
+            "aurc": 0.9476781704483606
+          },
+          "severity_oracle_ts": {
+            "accuracy": 0.03212908753391404,
+            "macro_f1": 0.056213690632638647,
+            "nll": 3.3205037594661975,
+            "brier": 0.9645764572294663,
+            "ece": 0.01916940272007947,
+            "adaptive_ece": 0.0267752403364973,
+            "aurc": 0.9388713991542358
+          },
+          "quality_aware_ts": {
+            "accuracy": 0.03212908753391404,
+            "macro_f1": 0.056213690632638647,
+            "nll": 3.513601160638617,
+            "brier": 0.980500389559668,
+            "ece": 0.08366417396537582,
+            "adaptive_ece": 0.0836641739653758,
+            "aurc": 0.9428954857191151
+          }
+        }
+      },
+      "quality_aware_vs_pooled": {
+        "condition_comparisons": 240,
+        "mean_quality_minus_pooled": {
+          "nll": -0.12279167707850025,
+          "brier": -0.0292501801420208,
+          "ece": -0.07976291313265367,
+          "adaptive_ece": -0.07984891975012748
+        },
+        "quality_aware_wins": {
+          "nll": 208,
+          "brier": 215,
+          "ece": 209,
+          "adaptive_ece": 209
+        },
+        "ties": {
+          "nll": 0,
+          "brier": 0,
+          "ece": 0,
+          "adaptive_ece": 0
+        }
+      },
+      "paired_cluster_statistics": {
+        "cluster_count": 26,
+        "repetitions": 2000,
+        "qa_minus_pooled_nll": -0.12279167707850026,
+        "ci95_low": -0.1479705503936475,
+        "ci95_high": -0.09627653854500837,
+        "bootstrap_tail_probability": 0.0,
+        "sign_flip_repetitions": 20000,
+        "sign_flip_seed": 20260803,
+        "sign_flip_p": 4.999750012499375e-05
+      },
+      "geometry_statistics_holm": [
+        {
+          "cluster_count": 26,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.1216132347100217,
+          "ci95_low": -0.1470905509921048,
+          "ci95_high": -0.0920594395230053,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260804,
+          "sign_flip_p": 4.999750012499375e-05,
+          "geometry": "uniform",
+          "holm_adjusted_p": 9.99950002499875e-05
+        },
+        {
+          "cluster_count": 26,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.12397011944697882,
+          "ci95_low": -0.15267485107381334,
+          "ci95_high": -0.09556037439151008,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260805,
+          "sign_flip_p": 4.999750012499375e-05,
+          "geometry": "azimuth_sector",
+          "holm_adjusted_p": 9.99950002499875e-05
+        }
+      ],
+      "paired_subject_cluster_sensitivity": {
+        "cluster_count": 16,
+        "repetitions": 2000,
+        "qa_minus_pooled_nll": -0.12279167707849986,
+        "ci95_low": -0.15383297259621678,
+        "ci95_high": -0.09402358835191775,
+        "bootstrap_tail_probability": 0.0,
+        "sign_flip_repetitions": 20000,
+        "sign_flip_seed": 20260806,
+        "sign_flip_p": 0.000199990000499975
+      },
+      "geometry_subject_cluster_sensitivity_holm": [
+        {
+          "cluster_count": 16,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.12161323471002171,
+          "ci95_low": -0.1518560775147558,
+          "ci95_high": -0.08283439497090915,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260807,
+          "sign_flip_p": 0.000199990000499975,
+          "geometry": "uniform",
+          "holm_adjusted_p": 0.000199990000499975
+        },
+        {
+          "cluster_count": 16,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.12397011944697828,
+          "ci95_low": -0.16116539999234297,
+          "ci95_high": -0.09428634520176582,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260808,
+          "sign_flip_p": 4.999750012499375e-05,
+          "geometry": "azimuth_sector",
+          "holm_adjusted_p": 9.99950002499875e-05
+        }
+      ],
+      "robustness_auc": {
+        "uncalibrated": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.785406651117775,
+            "macro_f1_auc_mean": 0.8351488811496927,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.7328208545543973,
+            "macro_f1_auc_mean": 0.7984771163658994,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.5194587240389039,
+            "macro_f1_auc_mean": 0.5701917134884866,
+            "row_count": 10
+          }
+        },
+        "clean_global_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.785406651117775,
+            "macro_f1_auc_mean": 0.8351488811496927,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.7328208545543973,
+            "macro_f1_auc_mean": 0.7984771163658994,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.5194587240389039,
+            "macro_f1_auc_mean": 0.5701917134884866,
+            "row_count": 10
+          }
+        },
+        "pooled_global_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.785406651117775,
+            "macro_f1_auc_mean": 0.8351488811496927,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.7328208545543973,
+            "macro_f1_auc_mean": 0.7984771163658994,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.5194587240389039,
+            "macro_f1_auc_mean": 0.5701917134884866,
+            "row_count": 10
+          }
+        },
+        "severity_oracle_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.785406651117775,
+            "macro_f1_auc_mean": 0.8351488811496927,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.7328208545543973,
+            "macro_f1_auc_mean": 0.7984771163658994,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.5194587240389039,
+            "macro_f1_auc_mean": 0.5701917134884866,
+            "row_count": 10
+          }
+        },
+        "quality_aware_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.785406651117775,
+            "macro_f1_auc_mean": 0.8351488811496927,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.7328208545543973,
+            "macro_f1_auc_mean": 0.7984771163658994,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.5194587240389039,
+            "macro_f1_auc_mean": 0.5701917134884866,
+            "row_count": 10
+          }
+        }
+      }
+    },
+    "conditioned7": {
+      "output_space": "conditioned7",
+      "metric_row_count": 1615,
+      "clean_uncalibrated_by_mask": {
+        "lidar_mmwave": {
+          "accuracy": 0.951449378837641,
+          "macro_f1": 0.9508899224991669,
+          "nll": 0.1408194666274864,
+          "brier": 0.07196133873223906,
+          "ece": 0.0159805711007568,
+          "adaptive_ece": 0.01525828892143067,
+          "aurc": 0.0045160214480217675
+        },
+        "lidar_only": {
+          "accuracy": 0.7842353277166928,
+          "macro_f1": 0.7756312850277343,
+          "nll": 0.5938664097723679,
+          "brier": 0.30746678059979654,
+          "ece": 0.06569735284092443,
+          "adaptive_ece": 0.06563286135869743,
+          "aurc": 0.06877586721858724
+        },
+        "mmwave_only": {
+          "accuracy": 0.9090389832928745,
+          "macro_f1": 0.9047460875027361,
+          "nll": 0.2913807741872881,
+          "brier": 0.1357416048009092,
+          "ece": 0.04425159543466066,
+          "adaptive_ece": 0.04390273986560702,
+          "aurc": 0.011979195664430958
+        }
+      },
+      "degraded_fusion_condition_count": 240,
+      "degraded_fusion_mean_by_method": {
+        "uncalibrated": {
+          "accuracy": 0.6517617449664429,
+          "macro_f1": 0.6403300245743766,
+          "nll": 1.3925817746362816,
+          "brier": 0.5338317942329478,
+          "ece": 0.20161697821458743,
+          "adaptive_ece": 0.2012767655882976,
+          "aurc": 0.2189567591340708
+        },
+        "clean_global_ts": {
+          "accuracy": 0.6517617449664429,
+          "macro_f1": 0.6403300245743766,
+          "nll": 1.2079915686776745,
+          "brier": 0.5089198250248184,
+          "ece": 0.16668025189020497,
+          "adaptive_ece": 0.16621326854476887,
+          "aurc": 0.21817377169610644
+        },
+        "pooled_global_ts": {
+          "accuracy": 0.6517617449664429,
+          "macro_f1": 0.6403300245743766,
+          "nll": 0.9884914736128174,
+          "brier": 0.45859263742906836,
+          "ece": 0.1088378741590044,
+          "adaptive_ece": 0.10891777731464757,
+          "aurc": 0.2162293530719214
+        },
+        "severity_oracle_ts": {
+          "accuracy": 0.6517617449664429,
+          "macro_f1": 0.6403300245743766,
+          "nll": 0.9177764265411583,
+          "brier": 0.43660546873483813,
+          "ece": 0.03948933278961918,
+          "adaptive_ece": 0.04004729122214485,
+          "aurc": 0.2160181817451815
+        },
+        "quality_aware_ts": {
+          "accuracy": 0.6517617449664429,
+          "macro_f1": 0.6403300245743766,
+          "nll": 0.9293647333893506,
+          "brier": 0.43782915976062486,
+          "ece": 0.06192937367181787,
+          "adaptive_ece": 0.061756364016065914,
+          "aurc": 0.207244579664983
+        }
+      },
+      "worst_uncalibrated_fusion_condition": {
+        "condition_id": "lidar_mmwave__azimuth_sector__seed_42__lidar_0.90__mmwave_0.90",
+        "geometry": "azimuth_sector",
+        "corruption_seed": 42,
+        "lidar_drop_rate": 0.9,
+        "mmwave_drop_rate": 0.9,
+        "methods": {
+          "uncalibrated": {
+            "accuracy": 0.15607596744252464,
+            "macro_f1": 0.13811368207011057,
+            "nll": 4.611715462388582,
+            "brier": 1.3619831951689045,
+            "ece": 0.6154828915652664,
+            "adaptive_ece": 0.6154828915652664,
+            "aurc": 0.8495243183047647
+          },
+          "clean_global_ts": {
+            "accuracy": 0.15607596744252464,
+            "macro_f1": 0.13811368207011057,
+            "nll": 3.8451342943903293,
+            "brier": 1.2908851973000721,
+            "ece": 0.5616675390843852,
+            "adaptive_ece": 0.5616675390843853,
+            "aurc": 0.8496527297736085
+          },
+          "pooled_global_ts": {
+            "accuracy": 0.15607596744252464,
+            "macro_f1": 0.13811368207011057,
+            "nll": 2.4438828847907335,
+            "brier": 1.033549323589429,
+            "ece": 0.338193630340212,
+            "adaptive_ece": 0.338193630340212,
+            "aurc": 0.8490255559580789
+          },
+          "severity_oracle_ts": {
+            "accuracy": 0.15607596744252464,
+            "macro_f1": 0.13811368207011057,
+            "nll": 1.9405829038244022,
+            "brier": 0.8557737669960688,
+            "ece": 0.0329764118882713,
+            "adaptive_ece": 0.03972608395224879,
+            "aurc": 0.8473574184663182
+          },
+          "quality_aware_ts": {
+            "accuracy": 0.15607596744252464,
+            "macro_f1": 0.13811368207011057,
+            "nll": 2.031910222289713,
+            "brier": 0.8908752164082036,
+            "ece": 0.1505542609996202,
+            "adaptive_ece": 0.15031688152451778,
+            "aurc": 0.8420937631177793
+          }
+        }
+      },
+      "quality_aware_vs_pooled": {
+        "condition_comparisons": 240,
+        "mean_quality_minus_pooled": {
+          "nll": -0.05912674022346678,
+          "brier": -0.020763477668443563,
+          "ece": -0.04690850048718652,
+          "adaptive_ece": -0.04716141329858166
+        },
+        "quality_aware_wins": {
+          "nll": 203,
+          "brier": 203,
+          "ece": 177,
+          "adaptive_ece": 180
+        },
+        "ties": {
+          "nll": 0,
+          "brier": 0,
+          "ece": 0,
+          "adaptive_ece": 0
+        }
+      },
+      "paired_cluster_statistics": {
+        "cluster_count": 26,
+        "repetitions": 2000,
+        "qa_minus_pooled_nll": -0.05912674022346678,
+        "ci95_low": -0.07631734782118031,
+        "ci95_high": -0.03995366379890013,
+        "bootstrap_tail_probability": 0.0,
+        "sign_flip_repetitions": 20000,
+        "sign_flip_seed": 20260803,
+        "sign_flip_p": 4.999750012499375e-05
+      },
+      "geometry_statistics_holm": [
+        {
+          "cluster_count": 26,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.04707679099618421,
+          "ci95_low": -0.06484256410669882,
+          "ci95_high": -0.024607598726313688,
+          "bootstrap_tail_probability": 0.001,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260804,
+          "sign_flip_p": 0.0004999750012499375,
+          "geometry": "uniform",
+          "holm_adjusted_p": 0.0004999750012499375
+        },
+        {
+          "cluster_count": 26,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.07117668945074934,
+          "ci95_low": -0.0941143698869871,
+          "ci95_high": -0.050250052373662916,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260805,
+          "sign_flip_p": 4.999750012499375e-05,
+          "geometry": "azimuth_sector",
+          "holm_adjusted_p": 9.99950002499875e-05
+        }
+      ],
+      "paired_subject_cluster_sensitivity": {
+        "cluster_count": 16,
+        "repetitions": 2000,
+        "qa_minus_pooled_nll": -0.05912674022346677,
+        "ci95_low": -0.08267318192315747,
+        "ci95_high": -0.03543117806421356,
+        "bootstrap_tail_probability": 0.0,
+        "sign_flip_repetitions": 20000,
+        "sign_flip_seed": 20260806,
+        "sign_flip_p": 0.00039998000099995
+      },
+      "geometry_subject_cluster_sensitivity_holm": [
+        {
+          "cluster_count": 16,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.04707679099618421,
+          "ci95_low": -0.07052690076958205,
+          "ci95_high": -0.017024132082960847,
+          "bootstrap_tail_probability": 0.004,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260807,
+          "sign_flip_p": 0.0095995200239988,
+          "geometry": "uniform",
+          "holm_adjusted_p": 0.0095995200239988
+        },
+        {
+          "cluster_count": 16,
+          "repetitions": 2000,
+          "qa_minus_pooled_nll": -0.07117668945074955,
+          "ci95_low": -0.09870648162598539,
+          "ci95_high": -0.04906027731553185,
+          "bootstrap_tail_probability": 0.0,
+          "sign_flip_repetitions": 20000,
+          "sign_flip_seed": 20260808,
+          "sign_flip_p": 0.00024998750062496874,
+          "geometry": "azimuth_sector",
+          "holm_adjusted_p": 0.0004999750012499375
+        }
+      ],
+      "robustness_auc": {
+        "uncalibrated": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.8755093055357228,
+            "macro_f1_auc_mean": 0.8719715643295121,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.8755438145556665,
+            "macro_f1_auc_mean": 0.8739179171285005,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.6822135751344661,
+            "macro_f1_auc_mean": 0.6688453950570998,
+            "row_count": 10
+          }
+        },
+        "clean_global_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.8755093055357228,
+            "macro_f1_auc_mean": 0.8719715643295121,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.8755438145556665,
+            "macro_f1_auc_mean": 0.8739179171285005,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.6822135751344661,
+            "macro_f1_auc_mean": 0.6688453950570998,
+            "row_count": 10
+          }
+        },
+        "pooled_global_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.8755093055357228,
+            "macro_f1_auc_mean": 0.8719715643295121,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.8755438145556665,
+            "macro_f1_auc_mean": 0.8739179171285005,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.6822135751344661,
+            "macro_f1_auc_mean": 0.6688453950570998,
+            "row_count": 10
+          }
+        },
+        "severity_oracle_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.8755093055357228,
+            "macro_f1_auc_mean": 0.8719715643295121,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.8755438145556665,
+            "macro_f1_auc_mean": 0.8739179171285005,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.6822135751344661,
+            "macro_f1_auc_mean": 0.6688453950570998,
+            "row_count": 10
+          }
+        },
+        "quality_aware_ts": {
+          "lidar_degraded_mmwave_clean": {
+            "accuracy_auc_mean": 0.8755093055357228,
+            "macro_f1_auc_mean": 0.8719715643295121,
+            "row_count": 10
+          },
+          "lidar_clean_mmwave_degraded": {
+            "accuracy_auc_mean": 0.8755438145556665,
+            "macro_f1_auc_mean": 0.8739179171285005,
+            "row_count": 10
+          },
+          "joint_equal_degradation": {
+            "accuracy_auc_mean": 0.6822135751344661,
+            "macro_f1_auc_mean": 0.6688453950570998,
+            "row_count": 10
+          }
+        }
+      }
+    }
+  },
+  "claim_boundaries": [
+    "Controlled point-loss simulation is not a clinical deployment study.",
+    "MM-Fi participants are healthy volunteers; no diagnostic or treatment claim is supported.",
+    "The official action-wise split is not a globally unseen-subject recognition protocol.",
+    "Temperature scaling changes confidence, not the predicted class or accuracy."
+  ]
+}
