@@ -9,13 +9,13 @@ Yiyang Zhang | MSc Smart Manufacturing, Nanyang Technological University
 
 ## Research question
 
-When aligned LiDAR and mmWave point observations deteriorate, can observable
-quality cues make a frozen X-Fi model's confidence more trustworthy than one
+When aligned LiDAR and mmWave observations deteriorate, can observable quality
+cues make a frozen multimodal model's confidence more trustworthy than one
 pooled temperature?
 
 ## Study design
 
-- **Evidence gate:** 54,433 clean frames and all 27 X-Fi/MM-Fi HAR actions.
+- **Evidence gate:** 54,433 clean frames and all 27 HAR actions.
 - **Target analysis:** 15,315 aligned frames, 7 lower-limb actions and 33
   healthy volunteers.
 - **Post-hoc split:** 17 calibration subjects and 16 disjoint test subjects.

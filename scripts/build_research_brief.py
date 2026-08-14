@@ -15,7 +15,11 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_RESULTS = ROOT / "results" / "tables" / "key_findings.json"
-DEFAULT_OUTPUT = ROOT / "docs" / "Yiyang_Zhang_XFi_MMFi_Research_Brief.pdf"
+DEFAULT_OUTPUT = (
+    ROOT
+    / "docs"
+    / "Yiyang_Zhang_Multimodal_Perception_Reliability_Research_Brief.pdf"
+)
 
 INK = HexColor("#17252A")
 MUTED = HexColor("#5D6B70")
@@ -96,7 +100,7 @@ def build_brief(results: dict, output: Path, repository_url: str | None) -> None
     output.parent.mkdir(parents=True, exist_ok=True)
     width, height = A4
     pdf = canvas.Canvas(str(output), pagesize=A4)
-    pdf.setTitle("X-Fi/MM-Fi Multimodal Reliability Research Brief")
+    pdf.setTitle("Multimodal Perception Reliability Research Brief")
     pdf.setAuthor("Yiyang Zhang")
     pdf.setSubject("Independent reproduction and controlled reliability evaluation")
 
@@ -133,7 +137,7 @@ def build_brief(results: dict, output: Path, repository_url: str | None) -> None
     pdf.drawString(margin + 14, q_top - 15, "RESEARCH QUESTION")
     draw_wrapped_text(
         pdf,
-        "When aligned LiDAR and mmWave point observations deteriorate, can observable quality cues make a frozen X-Fi model's confidence more trustworthy than one pooled temperature?",
+        "When aligned LiDAR and mmWave observations deteriorate, can observable quality cues make a frozen multimodal model's confidence more trustworthy than one pooled temperature?",
         margin + 14,
         q_top - 29,
         usable - 27,
@@ -150,7 +154,7 @@ def build_brief(results: dict, output: Path, repository_url: str | None) -> None
     labels = [
         ("ALIGNED INPUT", "LiDAR + mmWave"),
         ("CONTROLLED LOSS", "uniform / azimuth"),
-        ("FROZEN MODEL", "released X-Fi"),
+        ("FROZEN MODEL", "multimodal recognizer"),
         ("POST-HOC TEST", "confidence calibration"),
     ]
     for idx, (heading, detail) in enumerate(labels):

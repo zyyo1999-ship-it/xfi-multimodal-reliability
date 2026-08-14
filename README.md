@@ -13,7 +13,7 @@ controlled sensing-quality degradation.
 > not an official repository of the X-Fi or MM-Fi authors.
 
 **Advisor-facing summary:**
-[`One-page Research Brief (PDF)`](docs/Yiyang_Zhang_XFi_MMFi_Research_Brief.pdf)
+[`One-page Research Brief (PDF)`](docs/Yiyang_Zhang_Multimodal_Perception_Reliability_Research_Brief.pdf)
 | [`Accessible text source`](docs/research_brief_source.md)
 
 > **Main takeaway:** observable quality cues improved confidence reliability
