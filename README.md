@@ -1,4 +1,8 @@
-# X-Fi Multimodal Reliability Evaluation
+# Multimodal Perception Reliability under Sensing Degradation
+
+[![Protocol checks](https://github.com/zyyo1999-ship-it/xfi-multimodal-reliability/actions/workflows/ci.yml/badge.svg)](https://github.com/zyyo1999-ship-it/xfi-multimodal-reliability/actions/workflows/ci.yml)
+[![Python 3.10](https://img.shields.io/badge/Python-3.10-3776AB)](https://www.python.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Reproducible evaluation code and selected results for studying confidence
 calibration of frozen X-Fi LiDAR-mmWave human activity recognition under
@@ -14,7 +18,8 @@ controlled sensing-quality degradation.
 
 **Advisor-facing summary:**
 [`One-page Research Brief (PDF)`](docs/Yiyang_Zhang_Multimodal_Perception_Reliability_Research_Brief.pdf)
-| [`Accessible text source`](docs/research_brief_source.md)
+| [`Portfolio case study`](docs/portfolio_case_study.md)
+| [`Accessible brief source`](docs/research_brief_source.md)
 
 > **Main takeaway:** observable quality cues improved confidence reliability
 > under controlled LiDAR-mmWave degradation, but did not recover recognition
@@ -169,15 +174,14 @@ python scripts/build_research_brief.py \
 - Real-time latency, hardware faults, diagnostic use, and clinical outcomes were
   not evaluated.
 
-## Attribution and verification
+## Attribution and provenance
 
 MM-Fi and X-Fi remain the work of their respective authors and are cited in
 [`docs/references.bib`](docs/references.bib). This repository contains an
 independent evaluation layer built on their released research assets.
 
-AI-assisted development tools supported parts of implementation and
-documentation. Reported results remain tied to frozen protocols, executable
-tests, machine-readable audits, and content hashes for independent inspection.
+Reported results remain tied to frozen protocols, executable tests,
+machine-readable audits, and content hashes for independent inspection.
 
 ## License
 
